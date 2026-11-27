@@ -39,7 +39,7 @@ def cmd_check(args):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Grace's raster painting")
+    ap = argparse.ArgumentParser(description="AIVA's raster painting")
     sub = ap.add_subparsers(required=True)
     paint = sub.add_parser('paint', help='generate one painting')
     paint.add_argument('prompt')

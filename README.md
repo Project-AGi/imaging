@@ -1,8 +1,8 @@
 # Imaging
 
-Grace's raster painting capability. The `grace-imagegen` Python package provides
+AIVA's raster painting capability. The `aiva-imagegen` Python package provides
 a client for the local MossInfer `moss-server` sidecar and registers the `image`
-action with [Canvas](https://github.com/AGi-robot/canvas).
+action with [Canvas](https://github.com/Project-AGi/canvas).
 
 This package is a library and CLI, not a ROS node. The Telepathy receptor imports
 it when drawing needs raster painting. Canvas remains usable without Imaging.
