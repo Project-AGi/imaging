@@ -1,4 +1,4 @@
-"""imagegen - Grace's raster painting (the MOSS-Image sidecar, extracted).
+"""imagegen - AIVA's raster painting (the MOSS-Image sidecar, extracted).
 
 Owns the 'image' canvas action kind: it registers itself into the canvas
 language and provides the paint instructions.  Canvas stays vector-only and

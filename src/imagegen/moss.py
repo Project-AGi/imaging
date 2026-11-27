@@ -1,4 +1,4 @@
-"""Grace's raster painting: a client for the MossInfer ``moss-server`` sidecar.
+"""AIVA's raster painting: a client for the MossInfer ``moss-server`` sidecar.
 
 ``moss-server`` (from the community MossInfer engine for MOSS-Image) speaks one
 JSON message per line over stdin/stdout — protocol version 2 — the same role
@@ -229,7 +229,7 @@ class MossClient:
     # -- protocol steps -------------------------------------------------------
 
     def _hello(self) -> None:
-        result = self._call("hello", {"client": "aiva_chat", "protocol_version": 2}, 30)
+        result = self._call("hello", {"client": "imagegen", "protocol_version": 2}, 30)
         protocol = (result.get("result") or {}).get("protocol_version")
         if protocol != 2:
             raise MossPaintError("moss-server speaks an unexpected protocol version")
@@ -274,7 +274,7 @@ class MossClient:
         prompt = (prompt or "").strip()
         if not prompt:
             raise MossPaintError("The painting prompt is empty")
-        output = Path(tempfile.gettempdir()) / f"grace-paint-{uuid.uuid4().hex}.png"
+        output = Path(tempfile.gettempdir()) / f"aiva-paint-{uuid.uuid4().hex}.png"
         with self._lock:
             deadline = time.monotonic() + self.timeout
             try:
